@@ -1,14 +1,16 @@
-Table of Contents
-- [# Data Type](#-data-type)
-- [# Variable](#-variable)
-- [# Javascript on the Browser](#-javascript-on-the-browser)
-- [Document](#document)
-- [Event](#event)
-- [CSS in Javascript](#css-in-javascript)
-- [Save Username with Use localStorage](#save-username-with-use-localstorage)
+**Table of Contents**
+- [Data Type](#data-type)
+- [Variable](#variable)
+- [Javascript on the Browser](#javascript-on-the-browser)
+  - [Document](#document)
+  - [Event](#event)
+  - [CSS in Javascript](#css-in-javascript)
+  - [Save Username with Use localStorage](#save-username-with-use-localstorage)
+- [Look around to javascript method](#look-around-to-javascript-method)
+  - [How to make clock use Interval](#how-to-make-clock-use-interval)
+  - [Random](#random)
 
 # Data Type
----
 - integer(정수, 123)
 - float(실수, 1.23)
 - string(문자열, "hi")
@@ -44,7 +46,6 @@ Table of Contents
     ```
 
 # Variable
----
 - **const** vs **let** vs **var**
     - const(상수) : 바뀔 수 없는 값(업데이트 불가) / default
     - let(변수) : 바뀔 수 있는 값 / 변경 가능성이 있을 경우에만 사용
@@ -80,9 +81,7 @@ Table of Contents
         - `let`의 경우 변수 선언 이전에 참조 시 참조에러 발생(스코프 시작에서 변수 선언까지 **일시적 사각지대**(Temporal Dead Zone; TDZ)에 빠지기 때문)
         - 호이스팅(Hoisting) ?
             - var, function 선언문 등을 해당 스코프의 선두로 옮긴 것처럼 동작하는 특성
-
 # Javascript on the Browser
----
 ## Document
 ```javascript
 // javascript와 html이 별다른 연결 없이 document를 통해 연결되어 있다.
@@ -98,11 +97,12 @@ const h1 = document.getElementsByTagName("h1") // element tag로 검색
 
 const selector = document.querySelector(".hello h1") // element를 css 방식으로 검색할 수 있다.(첫번째 element 반환)
 const selectorAll = document.querySelectorAll(".hello h1") // element배열로 반환
-
 // querySelector("#hello") === getElementById("hello")
 // querySelectorAll(".hello") === getElementsByClassName("hello")
-```
 
+const bgImage = document.createElement("img"); // element 생성
+document.body.appendChild(bgImage); // 생성한 element를 실제 화면에 표시해주기 위해 body에 추가
+```
 ## Event
 **"h1 html element mdn"** -> 구글 검색 후 Web API 페이지에서 javascript 문법 확인 가능
 ```javascript
@@ -162,7 +162,6 @@ function onLinkClick(event) {
 
 link.addEventListener("click", onLinkClick);
 ```
-
 ## CSS in Javascript
 ```javascript
 const h1 = document.querySelector("div.hello:first-child h1");
@@ -199,7 +198,6 @@ h1 {
 }
 ```
 - 정의해둔 css를 활용하여 element class 목록에 추가/삭제하여 원하는 스타일을 적용할 수 있다.
-
 ## Save Username with Use localStorage
 ```javascript
 const loginForm = document.querySelector("#login-form");
@@ -233,4 +231,37 @@ if (savedUserName === null) {
 } else {
     paintGreetings(savedUserName);
 }
+```
+
+# Look around to javascript method
+## How to make clock use Interval
+```javascript
+const clock = document.querySelector("h2#clock");
+
+function getClock() {
+    const date = new Date();
+    const hours = String(date.getHours()).padStart(2, "0"); // pad 함수를 활용해 앞, 뒤로 원하는 길이만큼 빈공간을 채울 수 있다.
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    const seconds = String(date.getSeconds()).padStart(2, "0");
+    clock.innerText = `${hours}:${minutes}:${seconds}`; // ex) "01:23:45"
+}
+
+getClock(); // Interval의 경우 timeout 이후 실행되므로 최초 로드 시 값을 세팅해주기 위함
+setInterval(getClock, 1000); // 1000ms===1s 마다 'getClock' 함수를 호출한다.
+```
+
+## Random
+```javascript
+console.log(Math.random()); // 해당 함수를 사용하여 난수를 생성할 수 있음. [0~0.999...]
+
+console.log(Math.random() * 100); // 생성된 난수값에 *n을 하게되면 [0~(n-1.999...)] 범위의 난수 생성 가능 [0~99.999...]
+
+console.log(Math.floor(Math.random() * 10)); // 실수 값을 반환하기 때문에 정수형태로 사용을 원할 경우 Math.floor 함수를 활용하여 소수점 제거 가능
+/*
+** 참고
+Math.ceil(1.1) === 2 -> 올림
+Math.floor(1.5) === 1 -> 내림
+Math.round(1.5) === 2 -> 반올림
+Math.round(1.4) === 1 -> 반올림
+*/
 ```
