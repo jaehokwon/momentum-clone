@@ -117,10 +117,24 @@ main #todo-list li button {
     position: absolute;
     top: 20px;
     left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
     cursor: pointer;
+}
+
+#search {
+    position: absolute;
+    top: 20px;
+    left: 80px;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    text-align: left;
+}
+
+#search i {
+    cursor: pointer;
+}
+
+#search input {
+    text-align: left;
 }
 
 #weather {

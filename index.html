@@ -15,6 +15,12 @@
         <div id="logout">
             <i class="glyphicon glyphicon-log-out" style="font-size: 25px;"></i>
         </div>
+        <div id="search">
+            <i class="glyphicon glyphicon-search" style="font-size: 25px;"></i>
+            <form id="search-form" hidden>
+                <input type="text" />
+            </form>
+        </div>
         <div id="weather">
             <span></span>
             <span></span>
@@ -23,7 +29,7 @@
     <main>
         <h1 id="clock">00:00:00</h1>
         <form id="login-form" hidden>
-            <input type="text" placeholder="What is your name?" required maxlength="15" />
+            <input type="email" placeholder="What is your name?" required maxlength="15" />
         </form>
         <h2 id="greeting"></h2>
         <form id="todo-form" hidden>
@@ -44,5 +50,6 @@
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/logout.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>
