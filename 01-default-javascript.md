@@ -6,9 +6,12 @@
   - [Event](#event)
   - [CSS in Javascript](#css-in-javascript)
   - [Save Username with Use localStorage](#save-username-with-use-localstorage)
+  - [Geolocation](#geolocation)
 - [Look around to javascript method](#look-around-to-javascript-method)
   - [How to make clock use Interval](#how-to-make-clock-use-interval)
   - [Random](#random)
+  - [JSON](#json)
+  - [fetch](#fetch)
 
 # Data Type
 - integer(정수, 123)
@@ -232,6 +235,14 @@ if (savedUserName === null) {
     paintGreetings(savedUserName);
 }
 ```
+## Geolocation
+```javascript
+function successCallback(position) {
+    console.log(position); // GeolocationPosition class - coords[latitude(위도), longitude(경도)], timestamp
+}
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+```
+- successCallback parameter를 통해 사용자의 위/경도 데이터 취득 가능
 
 # Look around to javascript method
 ## How to make clock use Interval
@@ -264,4 +275,20 @@ Math.floor(1.5) === 1 -> 내림
 Math.round(1.5) === 2 -> 반올림
 Math.round(1.4) === 1 -> 반올림
 */
+```
+
+## JSON
+```javascript
+const lst = [1, 2, 3];
+const convertToString = JSON.stringify(lst); // object -> string
+console.log(convertToString);// string: "[1,2,3]"
+const convertToList = JSON.parse(convertToString); // string -> object
+console.log(convertToList); // list: [1, 2, 3]
+```
+
+## fetch
+```javascript
+fetch(url) // Web API 링크로 요청
+    .then(response => response.json()) // 응답받은 데이터를 object 형태로 변환
+    .then(data => console.log(data)); // object type logging
 ```
