@@ -1,0 +1,201 @@
+* {
+    text-align: center;
+    vertical-align: middle;
+    text-shadow: 2px 2px 2px gray;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    color: white;
+    vertical-align: baseline;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    text-shadow: 2px 2px 5px gray;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    padding: 8px 12px;
+    border: 0px solid #eaeaea;
+    border-bottom: 3px solid #eaeaea;
+    background-color: transparent;
+}
+
+input:focus {
+    outline: none !important;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    max-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-between;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 18px;
+}
+
+main #clock {
+    font-size: min(120px, 12vw);
+}
+
+main #greeting {
+    margin-top: 5px;
+    font-size: min(45px, 5vw);
+}
+
+main #login-form, main #todo-form {
+    font-size: min(38px, 4vw);
+    margin-top: 20px;
+    width: fit-content;
+}
+
+main #todo-list {
+    width: 100%;
+    margin-top: 10px;
+    max-width: min(500px, 50vw);
+    overflow: auto;
+    font-size: min(38px, 4vw);
+}
+
+main #todo-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+main #todo-list::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+}
+
+main #todo-list::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+main #todo-list li {
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    padding-top: 5px;
+    transition: all 0.4s ease-in-out;
+}
+
+main #todo-list li span {
+    align-self: baseline;
+    text-align: left;
+}
+
+main #todo-list li:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+  
+main #todo-list li button {
+    margin-left: 5px;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#logout {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+#weather {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#weather img {
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
+}
+
+#quote {
+    width: 80%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-between;
+}
+
+#quote .quote-text:hover + .quote-author {
+    visibility: visible;
+    animation: quote-motion 0.5s;
+    height: auto;
+}
+
+#quote .quote-author {
+    height: 0;
+    visibility: hidden;
+    color: rgb(200, 200, 200);
+}
+
+#quote .quote-author:hover {
+    visibility: visible;
+    animation: quote-motion 0.5s;
+    height: auto;
+}
+
+@keyframes quote-motion {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    25% {
+        opacity: .25;
+        height: 15px;
+    }
+    50% {
+        opacity: .5;
+        height: 30px;
+    }
+    75% {
+        opacity: .75;
+        height: 20px;
+    }
+    100% {
+        opacity: 1;
+        height: auto;
+    }
+}
+
+::placeholder {
+    color: #eaeaea;
+}
+
+::-ms-input-placeholder {
+    color: #eaeaea;
+}
