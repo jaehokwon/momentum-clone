@@ -120,7 +120,7 @@ main #todo-list li button {
     cursor: pointer;
 }
 
-#search {
+#search-div {
     position: absolute;
     top: 20px;
     left: 80px;
@@ -129,11 +129,11 @@ main #todo-list li button {
     text-align: left;
 }
 
-#search i {
+#search-div i {
     cursor: pointer;
 }
 
-#search input {
+#search-div input {
     text-align: left;
 }
 
