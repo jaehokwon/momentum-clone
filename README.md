@@ -5,10 +5,10 @@ Vanilla.js를 활용한 Chrome Extension Momentum Clone Coding
 - html, CSS, Javascript
 
 ## 기능 기획
-- [ ] set nickname
-- [ ] clock
-- [ ] to-do list
-- [ ] daily background photo
-- [ ] quotes
-- [ ] search text
-- [ ] weather
+- [x] set nickname / logout
+- [x] clock
+- [x] to-do list
+- [x] daily background photo
+- [x] quotes
+- [x] search text
+- [x] weather
