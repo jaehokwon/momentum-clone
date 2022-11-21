@@ -1,6 +1,6 @@
-const searchButton = document.querySelector("#search i");
-const searchForm = document.querySelector("#search form");
-const searchInput = document.querySelector("#search input");
+const searchButton = document.querySelector("#search-div i");
+const searchForm = document.querySelector("#search-div form");
+const searchInput = document.querySelector("#search-div input");
 
 function onSearchClick() {
     if (!(searchForm.hidden = !searchForm.hidden)) {
