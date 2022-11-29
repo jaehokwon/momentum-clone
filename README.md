@@ -14,7 +14,7 @@ Vanilla.js를 활용한 Chrome Extension Momentum Clone Coding
 - [x] weather
 
 ## 웹서버 구현(nginx)
-- [Web page link](https://t01.kaylabs.dev)
+- [Web page link](https://vanilla-js.kaylabs.dev)
 ```yaml
 version: '3.3'
 services:

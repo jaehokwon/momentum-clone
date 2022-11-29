@@ -10,11 +10,10 @@ function onGeoOk(position){
             console.log(data);
             const weather = document.querySelector("#weather span:first-child");
             const city = document.querySelector("#weather span:last-child");
+            console.log('weather', weather, 'city', city);
+            weather.querySelector("img").src = `icons/${data.weather[0].icon}.png`;
+            weather.querySelector("p").innerText = `${Math.round(data.main.temp * 10) / 10}°C`;
             city.innerText = data.name;
-            weather.innerText = `${data.main.temp}°C`;
-            const img = document.createElement('img');
-            img.src = `icons/${data.weather[0].icon}.png`;
-            weather.appendChild(img);
         });
 }
 function onGeoError(){

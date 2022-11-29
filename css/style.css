@@ -48,7 +48,7 @@ main {
     align-self: center;
     justify-content: space-between;
     transform: translateX(-50%) translateY(-50%);
-    font-size: 18px;
+    font-size: 18x;
 }
 
 main #clock {
@@ -113,20 +113,25 @@ main #todo-list li button {
     font-size: 14px;
 }
 
-#logout {
+#nav {
     position: absolute;
     top: 20px;
     left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#logout {
     cursor: pointer;
 }
 
 #search-div {
-    position: absolute;
-    top: 20px;
-    left: 80px;
-    display: grid;
-    grid-template-columns: 1fr 8fr;
     text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }
 
 #search-div i {
@@ -144,12 +149,22 @@ main #todo-list li button {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    font-size: 18px;
+}
+
+#weather span.temp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#weather p {
+    margin: 0px;
 }
 
 #weather img {
     width: 30px;
     height: 30px;
-    filter: invert(100%);
 }
 
 #quote {

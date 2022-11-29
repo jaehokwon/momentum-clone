@@ -16,6 +16,7 @@ function onLoginSubmit(event) {
 }
 
 function paintGreetings(userName) {
+    document.querySelector("#logout").hidden = false;
     todoForm2.hidden = false;
     greeting.innerText = `Hello ${userName}`;
 }
